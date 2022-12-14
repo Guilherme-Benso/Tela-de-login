@@ -13,6 +13,8 @@
         padding: 0;
         left: 0;
         top: 0;
+        background-image: linear-gradient(to right, rgb(20,147,220), rgb(17,54,71));
+
     }
     .container{
         display: flex;
@@ -20,7 +22,8 @@
         justify-content: center;
         width: 100%;
         height: 100vh;
-        background: linear-gradient(45deg, cyan, yellow);
+        background-image: linear-gradient(to right, rgb(20,147,220), rgb(17,54,71));
+
     }
     .box{
         display: flex;
@@ -59,13 +62,15 @@
 </style>
 
 <body>
+<a href="home.php">Voltar</a>
     <div class="container">
+        
         <div class="box">
-            <form action="">
+            <form action="testlogin.php" method="POST">
                 <h1>Login</h1>
-                <input type="text" placeholder="Nome">
-                <input type="password" placeholder="Senha">
-                <input type="submit" value="Entrar" id="button">
+                <input type="text" placeholder="Email" name="email">
+                <input type="password" placeholder="Senha" name="senha">
+                <input type="submit" value="Entrar" id="button" name="submit">
             </form>
         </div>
     </div>

@@ -4,14 +4,15 @@ if (isset($_POST['enviar'])) {
     include_once ('conexao.php');
     $nome = $_POST['nome'];
     $email = $_POST['email'];
+    $senha = $_POST['senha'];
     $telefone = $_POST['telefone'];
     $genero = $_POST['genero'];
     $data = $_POST['data-nascimento'];
     $cidade = $_POST['cidade'];
     $estado = $_POST['estado'];
     $endereco = $_POST['endereco'];
-    $result = mysqli_query($conexao, "INSERT INTO usuarios (nome, email, telefone, genero, data, cidade, estado) 
-VALUES ('$nome', '$email','$telefone','$genero','$data','$cidade','$estado','$endereco');");
+    $result = mysqli_query($conexao, "INSERT INTO usuarios (nome, email, senha, telefone, genero, data, cidade, estado) 
+VALUES ('$nome', '$email', '$senha','$telefone','$genero','$data','$cidade','$estado','$endereco');");
 }
 
 ?>
@@ -31,6 +32,8 @@ VALUES ('$nome', '$email','$telefone','$genero','$data','$cidade','$estado','$en
         font-family: Arial, Helvetica, sans-serif;
         margin: 0;
         padding: 0;
+        background-image: linear-gradient(to right, rgb(20,147,220), rgb(17,54,71));
+
     }
 
     .container {
@@ -39,7 +42,7 @@ VALUES ('$nome', '$email','$telefone','$genero','$data','$cidade','$estado','$en
         justify-content: center;
         height: 100vh;
         width: 100%;
-        background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+        background-image: linear-gradient(to right, rgb(20,147,220), rgb(17,54,71));
     }
 
     .box {
@@ -49,7 +52,6 @@ VALUES ('$nome', '$email','$telefone','$genero','$data','$cidade','$estado','$en
         color: white;
         border-radius: 10px;
         padding: 15px;
-        height: 650px;
         width: 50vh;
         align-items: center;
     }
@@ -65,7 +67,6 @@ VALUES ('$nome', '$email','$telefone','$genero','$data','$cidade','$estado','$en
         display: flex;
         flex-direction: column;
         gap: 25px;
-        height: 600px;
         width: 100%;
         border: 3px solid dodgerblue;
     }
@@ -151,6 +152,7 @@ VALUES ('$nome', '$email','$telefone','$genero','$data','$cidade','$estado','$en
 </style>
 
 <body>
+    <a href="home.php">Voltar</a>
     <div class="container">
         <div class="box">
             <form action="formulario.php" method="POST">
@@ -163,6 +165,10 @@ VALUES ('$nome', '$email','$telefone','$genero','$data','$cidade','$estado','$en
                     <div class="input-box">
                         <input type="text" name="email" id="email" class="input-user" required>
                         <label class="label-input" for="nome">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="senha" id="senha" class="input-user" required>
+                        <label class="label-input" for="senha">Senha</label>
                     </div>
                     <div class="input-box">
                         <input type="tel" name="telefone" id="telefone" class="input-user" required>
