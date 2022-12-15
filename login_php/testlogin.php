@@ -1,7 +1,7 @@
 <?php
 session_start();
 // print_r($_REQUEST);
-if (isset($_POST["submit"]) && !empty($_POST["email"]) && !empty($_POST["senha"])) {
+if (isset($_POST["submit"]) && !empty($_POST['email']) && !empty($_POST['senha'])) {
     include_once("conexao.php");
     $email = $_POST["email"];
     $senha = $_POST["senha"];
@@ -19,10 +19,10 @@ if (isset($_POST["submit"]) && !empty($_POST["email"]) && !empty($_POST["senha"]
     else {
         $_SESSION["email"] = $email;
         $_SESSION["senha"] = $senha;
-        header("Location: sistema.php");
+        header("Location:sistema.php");
     }
 }else {
-    print_r("erro");
+    header("Location: login.php");
 }
 
 ?>

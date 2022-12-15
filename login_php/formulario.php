@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST['enviar'])) {
     include_once ('conexao.php');
     $nome = $_POST['nome'];
@@ -7,14 +6,15 @@ if (isset($_POST['enviar'])) {
     $senha = $_POST['senha'];
     $telefone = $_POST['telefone'];
     $genero = $_POST['genero'];
-    $data = $_POST['data-nascimento'];
+    $data = $_POST['data'];
     $cidade = $_POST['cidade'];
     $estado = $_POST['estado'];
     $endereco = $_POST['endereco'];
-    $result = mysqli_query($conexao, "INSERT INTO usuarios (nome, email, senha, telefone, genero, data, cidade, estado) 
-VALUES ('$nome', '$email', '$senha','$telefone','$genero','$data','$cidade','$estado','$endereco');");
+    $result = mysqli_query($conexao, "INSERT INTO usuarios (nome, email, senha, telefone, genero, data, cidade, estado,endereco) VALUES ('$nome', '$email', '$senha','$telefone','$genero','$data','$cidade','$estado','$endereco');");
+
+
+header("Location: login.php");
 }
-header("Location: login.php")
 ?>
 
 <!DOCTYPE html>
@@ -152,7 +152,7 @@ header("Location: login.php")
 </style>
 
 <body>
-    <a href="home.php">Voltar</a>
+    <a href="sistema.php">Voltar</a>
     <div class="container">
         <div class="box">
             <form action="formulario.php" method="POST">
