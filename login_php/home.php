@@ -59,8 +59,8 @@
     </div>
     <div class="container">
     <div class="box">
-        <a href="">login</a>
-        <a href="">cadastre-se</a>
+        <a href="login.php">login</a>
+        <a href="formulario.php">cadastre-se</a>
     </div>
     </div>
 </body>

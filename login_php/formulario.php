@@ -14,7 +14,7 @@ if (isset($_POST['enviar'])) {
     $result = mysqli_query($conexao, "INSERT INTO usuarios (nome, email, senha, telefone, genero, data, cidade, estado) 
 VALUES ('$nome', '$email', '$senha','$telefone','$genero','$data','$cidade','$estado','$endereco');");
 }
-
+header("Location: login.php")
 ?>
 
 <!DOCTYPE html>
